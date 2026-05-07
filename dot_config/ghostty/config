@@ -1,0 +1,9 @@
+font-family = "JetBrainsMono Nerd Font"
+font-size = 14
+
+theme = Catppuccin Macchiato
+
+background-opacity = 0.9
+background-blur = 50
+confirm-close-surface = false
+

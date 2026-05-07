@@ -1,0 +1,18 @@
+[user]
+name = {{ .name | quote }}
+    email = {{ .email | quote }}
+[init]
+    defaultBranch = main
+
+[core]
+    editor = nvim
+    excludesFile = ~/.config/git/ignore
+
+[fetch]
+    prune = true
+
+[diff]
+    colorMoved = zebra
+
+[includeIf "gitdir:~/school/**"]
+    path = ~/.config/git/school
