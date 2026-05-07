@@ -51,3 +51,9 @@ The script only runs on macOS and re-runs automatically when the package list ch
 
 - macOS (the install script is Darwin-only)
 - SSH key added to GitHub (external repos are cloned over SSH)
+
+---
+
+## License
+
+WTFPL — do whatever you want with it.
