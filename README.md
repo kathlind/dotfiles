@@ -50,5 +50,4 @@ The script only runs on macOS and re-runs automatically when the package list ch
 ## Requirements
 
 - macOS (the install script is Darwin-only)
-- chezmoi: `brew install chezmoi`
 - SSH key added to GitHub (external repos are cloned over SSH)
