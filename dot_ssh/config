@@ -1,0 +1,22 @@
+# Added by OrbStack: 'orb' SSH host for Linux machines
+# This only works if it's at the top of ssh_config (before any Host blocks).
+# This won't be added again if you remove it.
+Include ~/.orbstack/ssh/config
+
+# GitHub
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_github
+    IdentitiesOnly yes
+    UseKeychain yes
+    AddKeysToAgent yes
+
+# 21-school
+Host *.21-school.ru
+    Port 2222
+    User git
+    IdentityFile ~/.ssh/id_school
+    IdentitiesOnly yes
+    UseKeychain yes
+    AddKeysToAgent yes

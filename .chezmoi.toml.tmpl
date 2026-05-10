@@ -1,5 +1,11 @@
+{{- $gpgKey := output "sh" "-c" "gpg --list-secret-keys --with-colons 2>/dev/null | awk -F: '/^fpr:/ {print $10; exit}'" | trim -}}
+{{- if not $gpgKey -}}
+{{-   fail "No GPG signing key found. Please import or generate a GPG key first, then run chezmoi init again." -}}
+{{- end -}}
+
 [data]
 name = {{ promptString "git name" | quote }}
 email = {{ promptString "git email" | quote }}
 school_email = {{ promptString "school email" | quote }}
+gpg_signing_key = {{ $gpgKey | quote }}
 

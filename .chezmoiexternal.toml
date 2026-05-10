@@ -1,10 +1,10 @@
 # --- мой конфиг ---
 [".config/nvim"]
 type = "git-repo"
-url = "git@github.com:kathlind/nvim-config.git"
+url = "https://github.com/kathlind/nvim-config.git"
 refreshPeriod = "168h"
 
 [".config/zsh"]
 type = "git-repo"
-url = "git@github.com:kathlind/zsh-config.git"
+url = "https://github.com/kathlind/zsh-config.git"
 refreshPeriod = "168h"

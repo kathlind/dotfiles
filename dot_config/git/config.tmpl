@@ -1,6 +1,8 @@
 [user]
-name = {{ .name | quote }}
+    name = {{ .name | quote }}
     email = {{ .email | quote }}
+    signingkey = {{ .gpg_signing_key | quote }}
+
 [init]
     defaultBranch = main
 
@@ -13,6 +15,15 @@ name = {{ .name | quote }}
 
 [diff]
     colorMoved = zebra
+
+[commit]
+    gpgsign = true
+
+[tag]
+    gpgsign = true
+
+[gpg]
+    program = gpg
 
 [includeIf "gitdir:~/school/**"]
     path = ~/.config/git/school

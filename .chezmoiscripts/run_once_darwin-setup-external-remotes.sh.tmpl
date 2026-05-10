@@ -1,0 +1,15 @@
+#!/bin/bash
+set -euo pipefail
+
+declare -A repos=(
+    ["$HOME/.config/nvim"]="git@github.com:kathlind/nvim-config.git"
+    ["$HOME/.config/zsh"]="git@github.com:kathlind/zsh-config.git"
+)
+
+for path in "${!repos[@]}"; do
+    remote="${repos[$path]}"
+    if [ -d "$path/.git" ]; then
+        echo "Setting SSH remote for $path..."
+        git -C "$path" remote set-url origin "$remote"
+    fi
+done
