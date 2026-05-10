@@ -5,6 +5,9 @@ if [[ "$(uname -s)" != "Darwin" ]]; then
     exit 0
 fi
 
+mkdir -p "$HOME/.ssh"
+chmod 700 "$HOME/.ssh"
+
 if [ ! -f ~/.ssh/id_github ]; then
     echo "Generating GitHub SSH key..."
     ssh-keygen -t ed25519 -C {{ .email | quote }} -f ~/.ssh/id_github
