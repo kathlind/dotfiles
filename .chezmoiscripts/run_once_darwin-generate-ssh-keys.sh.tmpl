@@ -11,12 +11,12 @@ chmod 700 "$HOME/.ssh"
 if [ ! -f ~/.ssh/id_github ]; then
     echo "Generating GitHub SSH key..."
     ssh-keygen -t ed25519 -C {{ .email | quote }} -f ~/.ssh/id_github
+    ssh-add --apple-use-keychain ~/.ssh/id_github
 fi
 
 if [ ! -f ~/.ssh/id_school ]; then
     echo "Generating 21-school SSH key..."
     ssh-keygen -t ed25519 -C {{ .school_email | quote }} -f ~/.ssh/id_school
+    ssh-add --apple-use-keychain ~/.ssh/id_school
 fi
 
-ssh-add --apple-use-keychain ~/.ssh/id_github
-ssh-add --apple-use-keychain ~/.ssh/id_school

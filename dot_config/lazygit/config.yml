@@ -1,0 +1,28 @@
+promptToReturnFromSubprocess: false
+
+quitOnTopLevelReturn: true
+
+gui:
+  nerdFontsVersion: "3"
+  showIcons: true
+  showRandomTip: false
+
+  scrollPastBottom: false
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+
+  autoRefresh: true
+  fetchAll: true
+
+  # Парсить emoji aliases в git output, например :sparkles:
+  parseEmoji: true
+
+  log:
+    order: topo-order
+    showGraph: always
+
+os:
+  editPreset: nvim
