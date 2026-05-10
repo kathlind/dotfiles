@@ -2,10 +2,16 @@
 
 Personal dotfiles managed with [chezmoi](https://chezmoi.io).
 
+> productivity setup for someone who spends 80% of time configuring it
+
+## Before you begin
+
+**Import your GPG key first.**
+
 ## Quick start
 
 ```sh
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:kathlind/dotfiles.git
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply kathlind
 ```
 
 During initialization chezmoi will prompt for three values that are stored locally and never committed:
@@ -18,11 +24,7 @@ During initialization chezmoi will prompt for three values that are stored local
 
 ### Package installation
 
-`.chezmoiscripts/run_onchange_darwin-install-packages.sh.tmpl` installs Homebrew if missing, then runs `brew bundle` with the package list from `.chezmoi.toml.tmpl`.
-
-Brews: `zsh`, `antidote`, `eza`, `zoxide`, `nvim`, `go`, `gopls`, `tree`, `tree-sitter`, `tree-sitter-cli`, `onefetch`, `node`, `ripgrep`, `fzf`, `fd`, `lazygit`, `git-delta`
-
-Casks: `goland`, `visual-studio-code`, `keka`, `discord`, `appcleaner`, `ghostty`, `steam`, `obsidian`, `orbstack`, `prismlauncher`, `figma`, `obs`, `font-jetbrains-mono-nerd-font`, `rocket-chat`
+`.chezmoiscripts/run_onchange_darwin-install-packages.sh.tmpl` installs Homebrew if missing, then runs `brew bundle` with the package list from `Brewfile`.
 
 The script only runs on macOS and re-runs automatically when the package list changes.
 
@@ -50,6 +52,7 @@ The script only runs on macOS and re-runs automatically when the package list ch
 ## Requirements
 
 - macOS (the install script is Darwin-only)
+- GPG key imported (see [Before you begin](#before-you-begin))
 - SSH key added to GitHub (external repos are cloned over SSH)
 
 ---
